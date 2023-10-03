@@ -36,7 +36,6 @@ def main():
         async def on_message(cloud: CloudChange):
             if cloud.name=="SEND":
                 msg=decode(cloud.value)
-                print(msg)
                 if msg.startswith("motor("):
                     msg=msg.replace("motor(","").replace(")","").split(",")
                     motor(droid,int(msg[0]),int(msg[1]),int(msg[2]))
